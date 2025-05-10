@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-900 text-white;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 6s linear infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Custom slider styling */
+.music-progress {
+  height: 4px;
+  @apply rounded-full bg-gray-700;
+}
+
+.music-progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  @apply bg-purple-500;
+  cursor: pointer;
+}
+
+.music-progress::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  @apply bg-purple-500;
+  cursor: pointer;
+}
+
+/* Creating the progress track effect */
+.music-progress::-webkit-slider-runnable-track {
+  @apply bg-gray-700;
+  border-radius: 4px;
+  height: 4px;
+}
+
+.music-progress::-moz-range-track {
+  @apply bg-gray-700;
+  border-radius: 4px;
+  height: 4px;
+}
